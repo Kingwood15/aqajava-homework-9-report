@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.9.6'
+    //id 'io.qameta.allure' version '2.9.6'
 }
 
 group 'ru.netology'
@@ -12,12 +12,12 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-allure {
+/*allure {
     version = '2.16.1'
     useJUnit5 {
         version = '2.16.1'
     }
-}
+}*/
 
 repositories {
     mavenLocal()
@@ -36,7 +36,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    testImplementation 'io.qameta.allure:allure-selenide:2.16.1'
+    //testImplementation 'io.qameta.allure:allure-selenide:2.16.1'
 
     implementation 'com.epam.reportportal:agent-java-junit5:5.0.0'
     implementation 'com.epam.reportportal:logger-java-logback:5.0.2'
