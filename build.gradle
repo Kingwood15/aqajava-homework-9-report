@@ -20,6 +20,8 @@ allure {
 }
 
 repositories {
+    mavenLocal()
+
     mavenCentral()
 }
 
@@ -35,10 +37,17 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testImplementation 'io.qameta.allure:allure-selenide:2.16.1'
+
+    implementation 'com.epam.reportportal:agent-java-junit5:5.0.0'
+    implementation 'com.epam.reportportal:logger-java-logback:5.0.2'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
 
 test {
     useJUnitPlatform()
     // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
+    testLogging.showStandardStreams = true
 }
